@@ -1,0 +1,238 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-config
+  labels:
+    {{ include "..labels" . | nindent 4 }}
+data:
+  {{- with .Values.config.cache }}
+  KC_CACHE: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.cacheConfigFile }}
+  KC_CACHE_CONFIG_FILE: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.cacheStack }}
+  KC_CACHE_STACK: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.db }}
+  KC_DB: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.dbPassword }}
+  KC_DB_PASSWORD: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.dbPoolInitialSize }}
+  KC_DB_POOL_INITIAL_SIZE: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.dbPoolMaxSize }}
+  KC_DB_POOL_MAX_SIZE: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.dbPoolMinSize }}
+  KC_DB_POOL_MIN_SIZE: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.dbSchema }}
+  KC_DB_SCHEMA: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.dbUrl }}
+  KC_DB_URL: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.dbUrlDatabase }}
+  KC_DB_URL_DATABASE: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.dbUrlHost }}
+  KC_DB_URL_HOST: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.dbUrlPort }}
+  KC_DB_URL_PORT: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.dbUrlProperties }}
+  KC_DB_URL_PROPERTIES: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.dbUsername }}
+  KC_DB_USERNAME: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.transactionXaEnabled }}
+  KC_TRANSACTION_XA_ENABLED: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.features }}
+  KC_FEATURES: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.featuresDisabled }}
+  KC_FEATURES_DISABLED: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.hostname }}
+  KC_HOSTNAME: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.hostnameAdmin }}
+  KC_HOSTNAME_ADMIN: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.hostnameAdminUrl }}
+  KC_HOSTNAME_ADMIN_URL: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.hostnamePath }}
+  KC_HOSTNAME_PATH: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.hostnamePort }}
+  KC_HOSTNAME_PORT: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.hostnameStrict }}
+  KC_HOSTNAME_STRICT: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.hostnameStrictBackchannel }}
+  KC_HOSTNAME_STRICT_BACKCHANNEL: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.hostnameUrl }}
+  KC_HOSTNAME_URL: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.httpEnabled }}
+  KC_HTTP_ENABLED: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.httpHost }}
+  KC_HTTP_HOST: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.httpPort }}
+  KC_HTTP_PORT: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.httpRelativePath }}
+  KC_HTTP_RELATIVE_PATH: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.httpsCertificateFile }}
+  KC_HTTPS_CERTIFICATE_FILE: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.httpsCertificateKeyFile }}
+  KC_HTTPS_CERTIFICATE_KEY_FILE: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.httpsCipherSuites }}
+  KC_HTTPS_CIPHER_SUITES: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.httpsClientAuth }}
+  KC_HTTPS_CLIENT_AUTH: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.httpsKeyStoreFile }}
+  KC_HTTPS_KEY_STORE_FILE: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.httpsKeyStorePassword }}
+  KC_HTTPS_KEY_STORE_PASSWORD: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.httpsKeyStoreType }}
+  KC_HTTPS_KEY_STORE_TYPE: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.httpsPort }}
+  KC_HTTPS_PORT: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.httpsProtocols }}
+  KC_HTTPS_PROTOCOLS: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.httpsTrustStoreFile }}
+  KC_HTTPS_TRUST_STORE_FILE: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.httpsTrustStorePassword }}
+  KC_HTTPS_TRUST_STORE_PASSWORD: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.httpsTrustStoreType }}
+  KC_HTTPS_TRUST_STORE_TYPE: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.healthEnabled }}
+  KC_HEALTH_ENABLED: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.metricsEnabled }}
+  KC_METRICS_ENABLED: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.proxy }}
+  KC_PROXY: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.vault }}
+  KC_VAULT: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.vaultDir }}
+  KC_VAULT_DIR: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.log }}
+  KC_LOG: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.logConsoleColor }}
+  KC_LOG_CONSOLE_COLOR: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.logConsoleFormat }}
+  KC_LOG_CONSOLE_FORMAT: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.logConsoleOutput }}
+  KC_LOG_CONSOLE_OUTPUT: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.logFile }}
+  KC_LOG_FILE: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.logFileFormat }}
+  KC_LOG_FILE_FORMAT: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.logGelfFacility }}
+  KC_LOG_GELF_FACILITY: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.logGelfHost }}
+  KC_LOG_GELF_HOST: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.logGelfIncludeLocation }}
+  KC_LOG_GELF_INCLUDE_LOCATION: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.logGelfIncludeMessageParameters }}
+  KC_LOG_GELF_INCLUDE_MESSAGE_PARAMETERS: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.logGelfIncludeStackTrace }}
+  KC_LOG_GELF_INCLUDE_STACK_TRACE: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.logGelfMaxMessageSize }}
+  KC_LOG_GELF_MAX_MESSAGE_SIZE: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.logGelfPort }}
+  KC_LOG_GELF_PORT: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.logGelfTimestampFormat }}
+  KC_LOG_GELF_TIMESTAMP_FORMAT: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.logLevel }}
+  KC_LOG_LEVEL: "{{ . }}"
+  {{- end }}
+  {{- with .Values.config.storageAreaActionToken }}
+  KC_STORAGE_AREA_ACTION_TOKEN: {{ . }}
+  {{- end }}
+  {{- with .Values.config.storageAreaAuthSession }}
+  KC_STORAGE_AREA_AUTH_SESSION: {{ . }}
+  {{- end }}
+  {{- with .Values.config.storageAreaAuthorization }}
+  KC_STORAGE_AREA_AUTHORIZATION: {{ . }}
+  {{- end }}
+  {{- with .Values.config.storageAreaClient }}
+  KC_STORAGE_AREA_CLIENT: {{ . }}
+  {{- end }}
+  {{- with .Values.config.storageAreaClientScope }}
+  KC_STORAGE_AREA_CLIENT_SCOPE: {{ . }}
+  {{- end }}
+  {{- with .Values.config.storageAreaEventAdmin }}
+  KC_STORAGE_AREA_EVENT_ADMIN: {{ . }}
+  {{- end }}
+  {{- with .Values.config.storageAreaEventAuth }}
+  KC_STORAGE_AREA_EVENT_AUTH: {{ . }}
+  {{- end }}
+  {{- with .Values.config.storageAreaGroup }}
+  KC_STORAGE_AREA_GROUP: {{ . }}
+  {{- end }}
+  {{- with .Values.config.storageAreaLoginFailure }}
+  KC_STORAGE_AREA_LOGIN_FAILURE: {{ . }}
+  {{- end }}
+  {{- with .Values.config.storageAreaRealm }}
+  KC_STORAGE_AREA_REALM: {{ . }}
+  {{- end }}
+  {{- with .Values.config.storageAreaRole }}
+  KC_STORAGE_AREA_ROLE: {{ . }}
+  {{- end }}
+  {{- with .Values.config.storageAreaSingleUseObject }}
+  KC_STORAGE_AREA_SINGLE_USE_OBJECT: {{ . }}
+  {{- end }}
+  {{- with .Values.config.storageAreaUser }}
+  KC_STORAGE_AREA_USER: {{ . }}
+  {{- end }}
+  {{- with .Values.config.storageAreaUserSession }}
+  KC_STORAGE_AREA_USER_SESSION: {{ . }}
+  {{- end }}
+  {{- with .Values.config.storage }}
+  KC_STORAGE: {{ . }}
+  {{- end }}

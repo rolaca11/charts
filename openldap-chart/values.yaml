@@ -10,8 +10,6 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
 
-imagePullSecrets:
-  - name: "regcred"
 nameOverride: ""
 fullnameOverride: ""
 
@@ -37,13 +35,13 @@ resources:
     cpu: 100m
     memory: 100Mi
   requests:
-    cpu: 100m
+    cpu: 50m
     memory: 100Mi
 
 persistence:
   storageSize: 1Gi
   accessMode: ReadWriteOnce
-  storageClass: "do-block-storage"
+  storageClass: "standard"
 
 nodeSelector: {}
 
@@ -55,6 +53,6 @@ ingress:
   enabled: true
   secretName: "ldap-tls"
   annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-prod
+    cert-manager.io/cluster-issuer: letsencrypt
   hosts:
     - ldap.ropi.dev

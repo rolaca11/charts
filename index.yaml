@@ -3,13 +3,13 @@ entries:
   keycloak-chart:
   - apiVersion: v2
     appVersion: 19.0.3
-    created: "2022-10-25T23:28:03.487427787+02:00"
+    created: "2023-01-28T18:12:05.869149284+01:00"
     description: Helm chart for Keycloak with Quarkus engine. Designed with GKE in
       mind.
-    digest: 45662a824d8a004c36edeab0e2e11c73b4158c5060dbf614b4fa850d92d1db91
+    digest: 17bcf6f382b1a9cda6f6f787fbe7631d05ed40aeff1b9ee959f19f2cc7592a1d
     name: keycloak-chart
     type: application
     urls:
     - https://rolaca11.github.io/charts/keycloak-chart-1.0.0.tgz
     version: 1.0.0
-generated: "2022-10-25T23:28:03.486150969+02:00"
+generated: "2023-01-28T18:12:05.868195354+01:00"
